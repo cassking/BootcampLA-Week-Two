@@ -1,0 +1,21 @@
+<h1 class="error"><%= @error %> </h1>
+<h2>Submit Article here</h2>
+<form action="/form" method="post">
+  <label for="title">Add a Title:</label>
+  <input type="text" id="title" name="title">
+  <br/><br/>
+
+  <label for="url">Add a URL:</label>
+  <input type="url" id="url" name="url">
+  <br/><br/>
+
+
+  <label for="description">Add a Description:</label>
+  <input type="description" id="description" name="description" pattern=".{20,}"  description="20 characters minimum" >
+  <br/><br/>
+
+  <label for="author">Add an author name:</label>
+  <input type="author" id="author" name="author">
+  <br/><br/>
+  <input type="submit">
+</form>

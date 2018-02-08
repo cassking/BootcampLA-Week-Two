@@ -1,0 +1,13 @@
+<h1>TEAM INFORMATION</h1>
+<h1> <%= @team_name  %> </h1>
+<p>
+  <% @players_on_team.each do | player | %>
+    <a href="/teams/<%= player.position %>">
+    <%= player.position %>
+  </a> :
+  <a href="/teams/<%= player.name %>">
+  <%= player.name %>
+</a><br />
+
+  <%end %>
+<p>

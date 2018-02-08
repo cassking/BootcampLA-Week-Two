@@ -1,0 +1,20 @@
+<h1>
+  Kickball Nation</h1>
+The Teams:
+  <p>
+  <% @flat_team_array.each do |item| %>
+   <a href="<%=item %> "><%=item%></a> |
+  <% end %>
+  </p>
+<% #binding.pry %>
+
+<h2>
+  The Players</h2>
+<% @teamdata.each do |team| %>
+  <p><%=team["position"]%>:
+    <%=team["player"]%>
+    [ "
+    <%=team["slogan"]%>" ]
+  </p>
+<% end %>
+<% #binding.pry %>

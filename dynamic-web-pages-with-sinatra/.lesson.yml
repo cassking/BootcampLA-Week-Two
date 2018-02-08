@@ -1,0 +1,9 @@
+---
+title: "Dynamic Web Pages with Sinatra"
+type: "article"
+description: >
+  Describes how we can combine data with HTML templates to create dynamic web pages.
+depends: "http"
+behaviors:
+  - sinatra
+tags: "html, http, erb, sinatra, routing"

@@ -1,0 +1,11 @@
+
+<h1> Kickball Nation</h1>
+<h2> The Teams in Depth</h2>
+<h3><%= @team %></h3>
+
+<%= @player %> <%= @position %>
+<% @fullteam.each do |playerposition| %>
+  <p><%=playerposition[0]%>: <%=playerposition[1]%>
+
+  </p>
+<% end %>

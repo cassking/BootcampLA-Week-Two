@@ -1,0 +1,97 @@
+ruby server.rb OUTPUT TO MY TERMINAL
+______________________________________
+
+[2018-02-03 16:25:17] INFO  WEBrick 1.3.1
+[2018-02-03 16:25:17] INFO  ruby 2.3.3 (2016-11-21) [x86_64-darwin17]
+== Sinatra (v2.0.0) has taken the stage on 4567 for development with backup from WEBrick
+[2018-02-03 16:25:17] INFO  WEBrick::HTTPServer#start: pid=16521 port=4567
+127.0.0.1 - - [03/Feb/2018:16:25:27 -0500] "GET /home.html HTTP/1.1" 200 244 0.0389
+127.0.0.1 - - [03/Feb/2018:16:25:27 EST] "GET /home.html HTTP/1.1" 200 244
+- -> /home.html
+127.0.0.1 - - [03/Feb/2018:16:25:27 -0500] "GET /home.css HTTP/1.1" 200 310 0.0015
+127.0.0.1 - - [03/Feb/2018:16:25:27 EST] "GET /home.css HTTP/1.1" 200 310
+http://localhost:4567/home.html -> /home.css
+
+USING CURL YOU CAN
+______________________________________
+
+curl http://localhost:4567/home.html
+
+WE CAN DO THIS....
+______________________________________
+
+➜  todo-list curl http://localhost:4567/home.html
+RESPONSE IN TERMINAL IS:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Basic HTML Page</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <h1>TODO list</h1>
+
+  <ul>
+    <li>pay bills</li>
+    <li>buy milk</li>
+    <li>learn Ruby</li>
+  </ul>
+</body>
+
+</html>%
+
+WE CAN ALSO DO THIS .. VERBOSE MODE:
+______________________________________
+
+➜  todo-list curl http://localhost:4567/home.html --verbose
+*   Trying 127.0.0.1...
+* TCP_NODELAY set
+* Connected to localhost (127.0.0.1) port 4567 (#0)
+> GET /home.html HTTP/1.1
+> Host: localhost:4567
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK <---- STATUS OF RESPONSE WAS 'OK'
+------(BUNCH OF HTTP HEADERS FOLLOW WTH DEETS ABOUT THE RESPONSE)
+< Content-Type: text/html;charset=utf-8
+< Last-Modified: Sat, 03 Feb 2018 21:15:46 GMT
+< Content-Length: 244
+< X-Xss-Protection: 1; mode=block
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: SAMEORIGIN
+< Server: WEBrick/1.3.1 (Ruby/2.3.3/2016-11-21)
+< Date: Sat, 03 Feb 2018 21:31:32 GMT
+< Connection: Keep-Alive
+<
+---THIS IS THE RESPONSE 'BODY' NEXT ---
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Basic HTML Page</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <h1>TODO list</h1>
+
+  <ul>
+    <li>pay bills</li>
+    <li>buy milk</li>
+    <li>learn Ruby</li>
+  </ul>
+</body>
+
+* Connection #0 to host localhost left intact
+</html>%                                                     ➜
+
+WHAT THIS MEANS
+______________________________________
+
+These are logs of HTTP requests that were received and handled by the web server.
+
+ HTTP is the protocol that web servers and their clients use to communicate. In this case, the client is typically a web browser. When we want to view a page, we enter the URL into our browser which then sends an HTTP request to the web server at the given address. The server receives the request and then returns with an HTTP response containing the content for that page (usually HTML, CSS, or Javascript). When the browser receives the HTML and CSS, it draws it in the window.

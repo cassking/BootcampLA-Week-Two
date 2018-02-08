@@ -1,0 +1,16 @@
+<h1>News Aggregator Sys Check Practice</h1>
+<ul>
+<% @articles.each do |article| %>
+<li>
+  <h4><%= article["title"] %></h4>
+  <a href="<%= article["url"] %>" >
+    <%= article["url"] %>
+  </a>
+  <%= article["description"] %>
+  <span><a href="<%= article["author"] %>" >
+    <%= article["author"] %>
+  </a></span>
+</li>
+<% end %>
+</ul>
+<p><a href="/form">Add Your Own Article Here</a></p>

@@ -1,0 +1,9 @@
+
+  <h1>Only the Reviews</h1>
+
+    <% @reviews.each do |review| %>
+      <p>
+        Name: <%= review[:username] %><br />
+        Rating: <%= review[:rating] %><br />
+        Review: <%= review[:review] %>
+      </p>

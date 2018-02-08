@@ -1,0 +1,10 @@
+
+  <h1>TEAMS</h1>
+
+    <% @teams.each do |team| %>
+
+    <h1>  <a href="/teams/<%= team %>"
+        ><%= team %>
+      </a>
+    </h1>
+    <% end %>

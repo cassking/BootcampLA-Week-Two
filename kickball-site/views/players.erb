@@ -1,0 +1,10 @@
+<h1>players</h1>
+
+  <% @players.each do |player| %>
+    <p>
+      <a href="/players/<%= player.name %>"><%= player.name %></a>,
+      <a href="/players/<%= player.position %>"><%=player.position %></a>
+      <a href="/players/<%= player.team_name %>"><%=player.team_name %></a>
+  <br />
+    </p>
+  <% end %>
