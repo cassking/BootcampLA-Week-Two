@@ -22,6 +22,8 @@ post '/grocery-list' do
     end
   redirect '/grocery-list'
   else
-    erb :error
+    @groceries = CSV.readlines('grocery_list.csv', headers:true)
+    erb :index
+    # erb :error
   end
 end
