@@ -1,0 +1,19 @@
+<h1> Grocery List Page</h1>
+<% if @error %>
+<p style="color: red;"> <%= @error %> </p>
+<% end %>
+<ul>
+  <% @data.each do |grocery_item| %>
+    <li> <%= grocery_item %>
+    </li>
+  <% end %>
+</ul>
+<%#binding.pry%>
+<!-- remember that the form action matches the route -->
+<form action='/grocery-list' method='post'>
+  <div class='field'>
+    <label for='name'>Name: </label>
+    <input id='name' name='name' type='text' />
+  </div>
+    <input type='submit' value='Add' id='add' />
+</form>
